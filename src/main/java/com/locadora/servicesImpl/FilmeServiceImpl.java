@@ -3,11 +3,12 @@ package com.locadora.servicesImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.locadora.models.Filme;
 import com.locadora.repositories.FilmeRepository;
 import com.locadora.services.FilmesService;
-
+@Service
 public class FilmeServiceImpl implements FilmesService{
 	
 	@Autowired

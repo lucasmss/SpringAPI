@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title>Locadora - cadFilme</title>
+	<!-- CSS BOOTSTRAP -->
+</head>
+<body>
+	<h1>Cadastrar Filme</h1>
+	<form method="post">
+		Nome: <input type="text" value="" name="name"/>
+		Duração: <input type="number" value="" name="duration"/>
+		Gênero: <input type="text" value="" name="genre"/>
+		Ano de Criação: <input type="date" value="" name="yearCreation"/>
+		
+		<button type="submit">Salvar</button>
+		<button><a href="/filmes">Cancelar</a></button>
+	</form>
+</body>
+</html>

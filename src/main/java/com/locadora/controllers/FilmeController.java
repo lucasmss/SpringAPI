@@ -1,25 +1,39 @@
 package com.locadora.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.locadora.models.Filme;
-import com.locadora.services.FilmesService;
-
+import com.locadora.repositories.FilmeRepository;
+@Controller
 public class FilmeController {
 	
 	@Autowired
-	FilmesService filmesService;
+	FilmeRepository fr;
 	
-	@RequestMapping(value = "/pesquisa", method = RequestMethod.GET)
-	public List<Filme> getFilms() {
-		
-		List<Filme> filme = filmesService.findAll();
-		
-		return filme;
+	@RequestMapping(value="/cadasFilme", method=RequestMethod.GET)
+	public String form() {
+		return "filme/cadasFilme";
 	}
-
+	
+	@RequestMapping(value="/cadasFilme", method=RequestMethod.POST)
+	public String form(Filme filme) {
+		
+		fr.save(filme);
+		
+		return "redirect:/cadasFilme";
+	}
+	
+	@RequestMapping("/filmes")
+	public ModelAndView listaFilmes() {
+		ModelAndView mv = new ModelAndView("index");
+		Iterable<Filme> filmes = fr.findAll();
+		mv.addObject("filmes", filmes);
+		return mv;
+	}
+	
+	
 }

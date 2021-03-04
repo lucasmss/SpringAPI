@@ -22,7 +22,8 @@ public class Filme  implements Serializable{
 	private String name;
 	private Double duration;
 	private String genre;
-	private Date yearCreation;
+	private String yearCreation;
+	
 	public Long getId() {
 		return id;
 	}
@@ -47,10 +48,10 @@ public class Filme  implements Serializable{
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public Date getYearCreation() {
+	public String getYearCreation() {
 		return yearCreation;
 	}
-	public void setYearCreation(Date yearCreation) {
+	public void setYearCreation(String yearCreation) {
 		this.yearCreation = yearCreation;
 	}
 	public static long getSerialversionuid() {
