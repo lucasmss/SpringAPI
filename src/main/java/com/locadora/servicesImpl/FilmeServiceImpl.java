@@ -33,11 +33,9 @@ public class FilmeServiceImpl implements FilmesService{
 	}
 
 	@Override
-	public Filme update(long id) {
+	public Filme update(Filme filme) {
 		
-		filmeRepository.findById(id);
-		
-		return null;
+		return filmeRepository.save(filme);
 	}
 
 	@Override

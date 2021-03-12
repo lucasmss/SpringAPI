@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title>Locadora - editFilme</title>
+	<!-- CSS BOOTSTRAP -->
+</head>
+<body>
+	<h1>Atualizar Filme</h1>
+	<form th:method="POST">
+		Nome: <input type="text" th:field="*{filme.name}"/>
+		Duração: <input type="number" th:field="*{filme.duration}"/>
+		Gênero: <input type="text" th:field="*{filme.genre}"/>
+		Ano de Criação: <input type="text" th:field="*{filme.yearCreation}"/>
+		
+		<button type="submit">Salvar</button>
+		<button><a href="/filmes">Cancelar</a></button>
+	</form>
+</body>
+</html>

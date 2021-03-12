@@ -12,7 +12,7 @@ public interface FilmesService {
 	
 	Filme save(Filme filme);
 	
-	Filme update(long id);
+	Filme update(Filme filme);
 	
 	Filme deleteById(long id);
 

@@ -4,7 +4,6 @@
 <head>
 	<title>Locadora</title>
 	<!-- CSS BOOTSTRAP -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
 #customers {
   font-family: Arial, Helvetica, sans-serif;
@@ -31,25 +30,21 @@
 </style>
 </head>
 <body>
-	<h1>Filmes Cadastrados</h1>
-	<h3> <a href="/cadasFilme">Cadastrar Filmes</a></h3>
+	<h1>Detalhes do Filme</h1>
+	<h3> <a href="/filmes">Lista de filmes</a></h3>
 	<table id="customers">
 		<thead>
 			<th>Nome</th>
 			<th>Duração</th>
 			<th>Gênero</th>
 			<th>Ano de Criação</th>
-			<th>Excluir</th>
-			<th>Editar</th>
 		</thead>
 		<tbody>
-			<tr th:each="filme : ${filmes}">
-				<td><a th:href="${(#mvc.url('FC#detalhesFilme').arg(0, filme.id)).build()}"><span th:text="${filme.name}"></span></a></td>
+			<tr th:each="filme : ${filme}">
+				<td><span th:text="${filme.name}"></span></td>
 				<td><span th:text="${filme.duration}"></span></td>
 				<td><span th:text="${filme.genre}"></span></td>
 				<td><span th:text="${filme.yearCreation}"></span></td>
-				<td><a th:href="${(#mvc.url('FC#deletarFilme').arg(0, filme.id)).build()}"><i class="fa fa-trash"></i></a></td>
-				<td><a th:href="${(#mvc.url('FC#atualizarFilmeVer').arg(0, filme.id)).build()}"><i class="fa fa-pencil"></i></a></td>
 			</tr>
 		</tbody>
 	</table>
