@@ -15,5 +15,6 @@ public interface FilmesService {
 	Filme update(Filme filme);
 	
 	Filme deleteById(long id);
-
+	
+// os métodos 'save', 'update' e 'deleteById' poderiam ser do tipo void já que não estão retornando nada
 }
